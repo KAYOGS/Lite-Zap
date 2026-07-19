@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.kayo.lite_zap</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Lite-Zap</name>
+  <summary>A lightweight WhatsApp client</summary>
+
+  <description>
+    <p>
+      Lite-Zap is a fast, secure, and resource-efficient WhatsApp desktop client built on top of Tauri and Rust.
+    </p>
+    <p>
+      It features zero ads, sandboxed domain isolation, and aggressive background log/telemetry blocking, providing a clean and private chat experience without the heavy memory consumption of traditional Electron wrappers.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">com.kayo.lite_zap.desktop</launchable>
+
+  <url type="homepage">https://github.com</url>
+  <url type="bugtracker">https://github.com/issues</url>
+
+  <provides>
+    <binary>lite-zap</binary>
+  </provides>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Main chat interface</caption>
+      <image>https://githubusercontent.com</image>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="0.1.0" date="2026-07-19" />
+  </releases>
+</component>

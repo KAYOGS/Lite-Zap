@@ -1,6 +1,6 @@
 id: com.kayo.lite_zap
 runtime: org.gnome.Platform
-runtime-version: '46'
+runtime-version: '47'
 sdk: org.gnome.Sdk
 command: lite-zap
 finish-args:
