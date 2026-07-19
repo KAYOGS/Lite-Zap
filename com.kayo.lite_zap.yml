@@ -1,0 +1,25 @@
+id: com.kayo.lite_zap
+runtime: org.gnome.Platform
+runtime-version: '46'
+sdk: org.gnome.Sdk
+command: lite-zap
+finish-args:
+  - --share=ipc
+  - --socket=x11
+  - --socket=wayland
+  - --socket=pulseaudio
+  - --share=network
+  - --device=dri
+  - --filesystem=xdg-run/pipewire-0
+
+modules:
+  - name: lite-zap
+    buildsystem: simple
+    build-commands:
+      - install -D lite-zap /app/bin/lite-zap
+      - install -D icon.png /app/share/icons/hicolor/512x512/apps/com.kayo.lite_zap.png
+    sources:
+      - type: file
+        path: src-tauri/target/release/lite-zap
+      - type: file
+        path: src-tauri/icons/icon.png
