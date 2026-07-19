@@ -1,0 +1,39 @@
+{
+  "id" : "com.kayo.lite_zap",
+  "runtime" : "org.gnome.Platform",
+  "runtime-version" : "47",
+  "runtime-commit" : "7d00756d7d5f6397c54f09ac69521991cff9e40a31e6eca6bf61ae9864149380",
+  "sdk" : "org.gnome.Sdk",
+  "sdk-commit" : "fb298c9ea35750b1037f755885076d16ffeed5462b4cee83705b6007474b0307",
+  "command" : "lite-zap",
+  "modules" : [
+    {
+      "name" : "lite-zap",
+      "buildsystem" : "simple",
+      "sources" : [
+        {
+          "path" : "src-tauri/target/release/lite-zap",
+          "type" : "file"
+        },
+        {
+          "path" : "src-tauri/icons/icon.png",
+          "type" : "file"
+        }
+      ],
+      "build-commands" : [
+        "install -D lite-zap /app/bin/lite-zap",
+        "install -D icon.png /app/share/icons/hicolor/512x512/apps/com.kayo.lite_zap.png"
+      ]
+    }
+  ],
+  "finish-args" : [
+    "--share=ipc",
+    "--socket=x11",
+    "--socket=wayland",
+    "--socket=pulseaudio",
+    "--share=network",
+    "--device=dri",
+    "--filesystem=xdg-run/pipewire-0"
+  ],
+  "source-date-epoch" : 1784503542
+}

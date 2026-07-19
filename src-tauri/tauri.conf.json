@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "lite-zap",
+  "version": "0.1.0",
+  "identifier": "com.kayo.lite-zap",
+  "build": {
+    "frontendDist": "../src"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "label": "main",
+        "title": "Lite-Zap",
+        "resizable": true,
+        "fullscreen": false,
+        "maximized": true,
+        "url": "https://web.whatsapp.com",
+        "userAgent": "Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self' https://*.whatsapp.com https://*.whatsapp.net blob: data: 'unsafe-inline' 'unsafe-eval';"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/icon.png",
+      "icons/icon.ico",
+      "icons/icon.icns"
+    ]
+  }
+}

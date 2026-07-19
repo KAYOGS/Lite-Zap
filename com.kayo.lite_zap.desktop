@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Lite-Zap
+Comment=A lightweight WhatsApp client built with Tauri
+Exec=lite-zap
+Icon=com.kayo.lite_zap
+Terminal=false
+Categories=Network;InstantMessaging;
+StartupWMClass=lite-zap
+Keywords=whatsapp;chat;im;messenger;lite;
