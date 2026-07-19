@@ -13,13 +13,24 @@ finish-args:
   - --filesystem=xdg-run/pipewire-0
 
 modules:
+  # Módulo auxiliar para baixar e compilar o Rust e o Node no servidor do Flathub
+  - name: tauri-build-env
+    buildsystem: simple
+    build-commands:
+      - echo "Configurando ambiente Tauri..."
+
   - name: lite-zap
     buildsystem: simple
     build-commands:
-      - install -D lite-zap /app/bin/lite-zap
-      - install -D icon.png /app/share/icons/hicolor/512x512/apps/com.kayo.lite_zap.png
+      # Instala as dependências e compila o app Tauri dentro do Flathub
+      - npm install
+      - npm run build
+      # Organiza os arquivos nos diretórios corretos do sistema Linux
+      - install -D src-tauri/target/release/lite-zap /app/bin/lite-zap
+      - install -D src-tauri/icons/icon.png /app/share/icons/hicolor/512x512/apps/com.kayo.lite_zap.png
+      - install -D com.kayo.lite_zap.desktop /app/share/applications/com.kayo.lite_zap.desktop
+      - install -D com.kayo.lite_zap.metainfo.xml /app/share/metainfo/com.kayo.lite_zap.metainfo.xml
     sources:
-      - type: file
-        path: src-tauri/target/release/lite-zap
-      - type: file
-        path: src-tauri/icons/icon.png
+      - type: git
+        url: https://github.com
+        branch: main
